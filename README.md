@@ -10,7 +10,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 * **Jean-Baptiste Le Duigou** - *Initial work* - [jbleduigou](https://github.com/jbleduigou)
 
-See also the list of [contributors](https://github.com/jbleduigou/budgetcategorizer/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/jbleduigou/BattleDevGolang/contributors) who participated in this project.
 
 ## License
 
