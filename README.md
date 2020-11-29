@@ -1,6 +1,9 @@
 # BattleDevGolang
 
-Templates et corrigés des exercices BattleDev en Go
+![logo](http://www.les-rh.fr/wp-content/uploads/2019/10/blason_battledev_v4_bdm_groupe_1.png)
+
+Ce dépot a pour objectif de favoriser l'utilisation du langage Go lors de la compétition de code en ligne Battlev.
+Vous y trouverez des templates et le corrigés des exercices.
 
 ## Contributing
 
