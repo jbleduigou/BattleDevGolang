@@ -1,7 +1,9 @@
 # BattleDevGolang
 
-Ce dépot a pour objectif de favoriser l'utilisation du langage Go lors de la compétition de code en ligne Battlev.
+Ce dépot a pour objectif de favoriser l'utilisation du langage Go lors de la compétition de code en ligne Battlev.  
 Vous y trouverez des templates et le corrigés des exercices.
+
+Les énoncés des exercices se trouvent sur la plateforme d'entrainement : https://www.isograd.com/FR/solutionconcours.php
 
 ## Contributing
 
