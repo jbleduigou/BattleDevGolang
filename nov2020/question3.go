@@ -10,11 +10,8 @@
  func contestResponse() {
 	 scanner := bufio.NewScanner(os.Stdin)
 	 nbChar := -1
-	 var dic map[int]*Node
-	 dic = make(map[int]*Node)
 	 g := &ItemGraph{}
 	 root := &Node{value:0}
-	 dic[0] = root
 	 g.AddNode(root)
 	 for scanner.Scan() {
 		 line := scanner.Text()
@@ -24,16 +21,14 @@
 			 s := strings.Fields(line)
 			 a, _ := strconv.Atoi(s[0])
 			 b, _ := strconv.Atoi(s[1])
-			 na, found := dic[a]
-			 if !found {
+			 na, found := g.GetNode(a)
+			if !found {
 				 na = &Node{value : a}
-				 dic[a] = na
 				 g.AddNode(na)
 			 }
-			 nb, found := dic[b]
+			 nb, found := g.GetNode(b)
 			 if !found {
 				 nb = &Node{value : b}
-				 dic[b] = nb
 				 g.AddNode(nb)
 			 }
 			 g.AddEdge(nb, na)
@@ -80,6 +75,20 @@
 	 
  }
  
+ 
+ // GetNode gets a node from the graph given its value
+ func (g *ItemGraph) GetNode(value int) (*Node, bool) {
+	g.lock.RLock()
+	defer g.lock.RUnlock()
+
+	for _, current := range g.nodes {
+		if current.value == value {
+			return current, true
+		}
+	}
+	return nil, false
+}
+
  
  // AddEdge adds an edge to the graph
  func (g *ItemGraph) AddEdge(n1, n2 *Node) {
