@@ -34,6 +34,7 @@
 			 if !found {
 				 nb = &Node{value : b}
 				 dic[b] = nb
+				 g.AddNode(nb)
 			 }
 			 g.AddEdge(nb, na)
 		 }
@@ -41,24 +42,13 @@
 		 os.Stderr.WriteString("\n")
 	 }
 	 table := make([]int,10)
-	 table[0] = 1
-	 i := 1
 	 g.Traverse(func(n *Node) {
 		 os.Stderr.WriteString(fmt.Sprintf("Visiting id=%d level=%d\n", n.value, n.level))
-		  i = i +1
 	 })
-	//  for j := 1 ; j < 10 ; j++ {
-	// 	 count := 0
-	// 	 for _,v := range dic {
-	// 		if v.level == j  {
-	// 		  count = count + 1
-	// 		}
-	// 	 os.Stderr.WriteString(fmt.Sprintf("id=%d level=%d\n", v.value, v.level))
-	// 	 }
-	// 	 table[j] = count
-	//  }
 	for _, n := range g.nodes {
-		os.Stderr.WriteString(fmt.Sprintf("id=%d level=%d\n", n.value, n.level))
+		current := table[n.level]
+		current = current + 1
+		table[n.level] = current
 	}
 	 result := ""
 	 for _,k := range table {
