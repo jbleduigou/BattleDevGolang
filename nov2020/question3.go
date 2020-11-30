@@ -47,16 +47,19 @@
 		 os.Stderr.WriteString(fmt.Sprintf("Visiting id=%d level=%d\n", n.value, n.level))
 		  i = i +1
 	 })
-	 for j := 1 ; j < 10 ; j++ {
-		 count := 0
-		 for _,v := range dic {
-			if v.level == j  {
-			  count = count + 1
-			}
-		 os.Stderr.WriteString(fmt.Sprintf("id=%d level=%d\n", v.value, v.level))
-		 }
-		 table[j] = count
-	 }
+	//  for j := 1 ; j < 10 ; j++ {
+	// 	 count := 0
+	// 	 for _,v := range dic {
+	// 		if v.level == j  {
+	// 		  count = count + 1
+	// 		}
+	// 	 os.Stderr.WriteString(fmt.Sprintf("id=%d level=%d\n", v.value, v.level))
+	// 	 }
+	// 	 table[j] = count
+	//  }
+	for _, n := range g.nodes {
+		os.Stderr.WriteString(fmt.Sprintf("id=%d level=%d\n", n.value, n.level))
+	}
 	 result := ""
 	 for _,k := range table {
 		  result = result + " " + strconv.Itoa(k) 
